@@ -1,0 +1,259 @@
+.r-a-t {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.r-a-t, .r-a-t * {
+  box-sizing: border-box;
+}
+.r-a-t .add-wrapper {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 35px);
+  width: 35px;
+  height: 35px;
+  background: #f9f9f9;
+  transition: background ease 0.3s;
+}
+.r-a-t .add-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 9px;
+  top: 16px;
+  width: 17px;
+  height: 3px;
+  background: #bbb;
+}
+.r-a-t .add-wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 16px;
+  top: 9px;
+  width: 3px;
+  height: 17px;
+  background: #bbb;
+}
+.r-a-t .add-wrapper:hover {
+  background: #f3f3f3;
+}
+.r-a-t .tab-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  padding-left: 15px;
+}
+.r-a-t .tab-wrapper.with-add {
+  width: calc(100% - 35px);
+}
+.r-a-t .tab-wrapper .tab-button {
+  position: absolute;
+  height: 27px;
+  user-select: none;
+}
+.r-a-t .tab-wrapper .tab-button:hover {
+  cursor: default;
+}
+.r-a-t .tab-wrapper .tab-button:not(.active):hover .tab,
+.r-a-t .tab-wrapper .tab-button:not(.active):hover .icon.loading,
+.r-a-t .tab-wrapper .tab-button:not(.active):hover .icon.loading .mask {
+  background: #f3f3f3;
+}
+.r-a-t .tab-wrapper .tab-button:not(.active):hover .shadow {
+  background: linear-gradient(to right, transparent, #f8f8f8);
+}
+.r-a-t .tab-wrapper .tab-button.active {
+  z-index: 999 !important;
+}
+.r-a-t .tab-wrapper .tab-button.active .tab {
+  background: #fff;
+  border-width: 2px 0 0;
+  border-style: solid;
+  border-color: #04b1f2;
+}
+.r-a-t .tab-wrapper .tab-button.active .icon.loading,
+.r-a-t .tab-wrapper .tab-button.active .icon.loading .mask {
+  background: #fff;
+}
+.r-a-t .tab-wrapper .tab-button.active .shadow {
+  background: linear-gradient(to right, transparent, #fff);
+}
+.r-a-t .tab-wrapper .tab {
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: calc(100%);
+  height: 36px;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 4px;
+  padding: 0 30px;
+  background: #f9f9f9;
+  z-index: 0;
+  transition: background ease 0.3s;
+  user-select: none;
+}
+.r-a-t .tab-wrapper .text {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  z-index: 999;
+  font-size: 12px;
+  width: calc(100% - 30px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.r-a-t .tab-wrapper .text.with-close {
+  width: calc(100% - 45px);
+}
+.r-a-t .tab-wrapper .text > * {
+  position: relative;
+  vertical-align: top;
+}
+.r-a-t .tab-wrapper .text .icon {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-right: 8px;
+}
+.r-a-t .tab-wrapper .text .icon.loading {
+  margin-top: 2px;
+  width: 12px;
+  height: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #049fd9;
+  border-radius: 50%;
+  background: #f9f9f9;
+  transform: rotateZ(30deg);
+  animation-name: IconLoading;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transition: background ease 0.3s;
+}
+.r-a-t .tab-wrapper .text .icon.loading .mask {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 14px;
+  height: 14px;
+  background: #f9f9f9;
+  clip: rect(0px, 14px, 14px, 7px);
+  transition: background ease 0.3s;
+}
+.r-a-t .tab-wrapper .text .icon.warning {
+  margin-top: 2px;
+  width: 12px;
+  height: 12px;
+}
+.r-a-t .tab-wrapper .text .icon.warning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 2px;
+  height: 8px;
+  background: red;
+}
+.r-a-t .tab-wrapper .text .icon.warning::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  width: 2px;
+  height: 2px;
+  background: red;
+}
+.r-a-t .tab-wrapper .close {
+  position: absolute;
+  left: calc(100% - 30px);
+  top: 12px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  transform: rotateZ(45deg);
+}
+.r-a-t .tab-wrapper .close:hover {
+  background: #EB5528;
+}
+.r-a-t .tab-wrapper .close:hover::before, .r-a-t .tab-wrapper .close:hover::after {
+  background: white;
+}
+.r-a-t .tab-wrapper .close::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 3px;
+  top: 7px;
+  width: 9px;
+  height: 1px;
+  background: #888;
+}
+.r-a-t .tab-wrapper .close::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 1px;
+  height: 9px;
+  background: #888;
+}
+.r-a-t .panel-wrapper {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 35px);
+  border-top: 1px solid #04b1f2;
+  z-index: 998;
+  overflow: scroll;
+}
+.r-a-t .panel-wrapper .panel {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: -1;
+}
+.r-a-t .panel-wrapper .panel.active {
+  display: block;
+  z-index: 1;
+}
+.r-a-t .tooltip {
+  display: none;
+  position: absolute;
+  left: 100px;
+  top: 40px;
+  z-index: 999;
+  padding: 5px 15px;
+  white-space: nowrap;
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(206, 206, 206, 0.8);
+  opacity: 0.95;
+}
+
+@keyframes IconLoading {
+  from {
+    transform: rotateZ(30deg);
+  }
+  to {
+    transform: rotateZ(390deg);
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
