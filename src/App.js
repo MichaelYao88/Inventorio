@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css.map';
 import SplitPane from 'react-split-pane'
 import Pane from 'react-split-pane'
 import Tabs, { Tab } from 'react-awesome-tabs';
