@@ -30,7 +30,6 @@
 }
 
 .Resizer {
-    background: #000;
     opacity: .2;
     z-index: 1;
     -moz-box-sizing: border-box;
@@ -61,7 +60,7 @@
 }
 
 .Resizer.vertical {
-    width: 11px;
+    width: 25px;
     margin: 0 -5px;
     border-left: 5px solid rgba(255, 255, 255, 0);
     border-right: 5px solid rgba(255, 255, 255, 0);
@@ -97,7 +96,7 @@
   left: calc(100% - 35px);
   width: 35px;
   height: 35px;
-  background: #f9f9f9;
+  background: #eee;
   transition: background ease 0.3s;
 }
 .r-a-t .add-wrapper::before {
@@ -154,9 +153,6 @@
 }
 .r-a-t .tab-wrapper .tab-button.active .tab {
   background: #fff;
-  border-width: 2px 0 0;
-  border-style: solid;
-  border-color: #04b1f2;
 }
 .r-a-t .tab-wrapper .tab-button.active .icon.loading,
 .r-a-t .tab-wrapper .tab-button.active .icon.loading .mask {
@@ -175,7 +171,7 @@
   vertical-align: top;
   margin-top: 4px;
   padding: 0 30px;
-  background: #f9f9f9;
+  background: #eee;
   z-index: 0;
   transition: background ease 0.3s;
   user-select: none;
@@ -212,7 +208,7 @@
   border-width: 2px;
   border-color: #049fd9;
   border-radius: 50%;
-  background: #f9f9f9;
+  background: #eee;
   transform: rotateZ(30deg);
   animation-name: IconLoading;
   animation-duration: 1s;
@@ -226,7 +222,7 @@
   top: -3px;
   width: 14px;
   height: 14px;
-  background: #f9f9f9;
+  background: #eee;
   clip: rect(0px, 14px, 14px, 7px);
   transition: background ease 0.3s;
 }
@@ -294,7 +290,6 @@
   left: 0;
   width: 100%;
   height: calc(100% - 35px);
-  border-top: 1px solid #04b1f2;
   z-index: 998;
   overflow: scroll;
 }
@@ -332,6 +327,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
 
 @keyframes IconLoading {
   from {

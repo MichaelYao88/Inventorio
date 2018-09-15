@@ -2,17 +2,24 @@ import React, { Component } from 'react';
 import SplitPane from 'react-split-pane'
 import Pane from 'react-split-pane'
 import Tabs, { Tab } from 'react-awesome-tabs';
-import {Change, Simple} from './Xtab'
+import {Change, Simple} from './xtab'
+import {Menu} from './menu'
 import ReactDOM from 'react-dom';
 
 class App extends Component {
   render() {
     return (
+      <div>
+        <div style={{textAlign:'center',margin:'1%'}}>simple bar inventory</div>
 
-      <SplitPane split="vertical" defaultSize={'50%'}>
-      <div>yoo</div>
-      <Change></Change>
-      </SplitPane>
+
+        <SplitPane split="vertical" defaultSize={'50%'}>
+          <Menu></Menu>
+          <Change></Change>
+        </SplitPane>
+
+
+      </div>
     );
   }
 }
