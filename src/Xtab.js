@@ -104,10 +104,10 @@ export class Change extends Component {
 				onTabClose={ this.handleTabClose.bind(this) }
 				onTabAdd={ this.handleTabAdd.bind(this) }
 				draggable={ true }
-				showAdd={ true }
+				showAdd={ false }
 			>
 				{
-					this.tabs.map((value, index) => {
+          this.tabs.map((value, index) => {
 						return (
 							<Tab
 								key={ index }
