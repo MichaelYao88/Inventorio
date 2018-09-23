@@ -7,6 +7,11 @@ import {Menu} from './menu'
 import ReactDOM from 'react-dom';
 
 class App extends Component {
+  constructor(props) {
+      super(props);
+      this.tabs = {yo:5};
+  }
+
   render() {
     return (
       <div>
@@ -14,7 +19,8 @@ class App extends Component {
 
 
         <SplitPane split="vertical" defaultSize={'50%'}>
-          <Menu></Menu>
+
+          <Menu tabs={this.tabs}></Menu>
           <Change></Change>
         </SplitPane>
 
