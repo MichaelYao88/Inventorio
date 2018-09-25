@@ -9,18 +9,27 @@ import ReactDOM from 'react-dom';
 class App extends Component {
   constructor(props) {
       super(props);
-      this.tabs = {yo:5};
   }
 
+  state={yo:5}
+
+
+
   render() {
+
+    const handleClick = (id) => {
+      console.log(this)
+      this.setState({yo:19})
+    }
+
     return (
       <div>
-        <div style={{textAlign:'center',margin:'1%'}}>simple bar inventory</div>
+        <div style={{textAlign:'center',margin:'1%'}}>simple bar inventory {this.tabList}</div>
 
 
         <SplitPane split="vertical" defaultSize={'50%'}>
 
-          <Menu tabs={this.tabs}></Menu>
+          <Menu fnct={handleClick} tabs={this.state}></Menu>
           <Change></Change>
         </SplitPane>
 
