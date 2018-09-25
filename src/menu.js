@@ -6,20 +6,30 @@ import {Change} from './xtab.js'
 
 export class Menu extends Component {
 
-    render() {
-        return (
-            <div className="booty">
-              <button onClick={this.handleClik()}>Current Inventory</button>
-              <button>New Purchase Order</button>
-              <button>Manage Active Orders</button>
-              <button>Usage Report</button>
-              <button>Adjustments Report</button>
-              <div>{this.props.tabs.yo}</div>
-            </div>
-        );
-    }
+  constructor(props) {
+      super(props);
+      this.state = {
+          yo: this.props.tabs.yo
+      };
+  }
 
-    handleClik() {
-      this.props.tabs.yo=9
-    }
+  handleClick() {
+    console.log(this.state.yo)
+    this.state.yo=19
+  }
+
+  render() {
+      return (
+          <div className="booty">
+            <button onClick={this.handleClick.bind(this)}>Current Inventory</button>
+            <button>New Purchase Order</button>
+            <button>Manage Active Orders</button>
+            <button>Usage Report</button>
+            <button>Adjustments Report</button>
+            <div>{this.state.yo}</div>
+          </div>
+      );
+  }
+
+
 }
