@@ -6,7 +6,7 @@ import {Change} from './xtab.js'
 
 export class Menu extends Component {
   handleClick = () => {
-    this.props.fnct(this.props.tabs);
+    this.props.fnct();
   }
 
 

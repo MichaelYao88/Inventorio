@@ -10,8 +10,18 @@ class App extends Component {
   constructor(props) {
       super(props);
   }
+  state = {yo:5};
+  state = {tabs: [
+    {
+      title: 'Tab1',
+      content: 'foo'
+    },
+    {
+      title: 'Tab2',
+      content: 'bar'
+    }
+  ]};
 
-  state={yo:5}
 
 
 
@@ -30,7 +40,7 @@ class App extends Component {
         <SplitPane split="vertical" defaultSize={'50%'}>
 
           <Menu fnct={handleClick} tabs={this.state}></Menu>
-          <Change></Change>
+          <Change tabs={this.state.tabs}></Change>
         </SplitPane>
 
 

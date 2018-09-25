@@ -78,21 +78,7 @@ export class Change extends Component {
 			activeTab: 0
 		};
 
-		this.tabs = [
-			{
-				title: 'Tab1',
-				content: 'foo'
-			},
-			{
-				title: 'Tab2',
-				content: 'bar'
-			},
-			{
-
-				title: 'Tab3',
-				content: 'baz'
-			},
-		];
+		this.tabs = this.props.tabs;
 	}
 
 	render() {
