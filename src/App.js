@@ -28,8 +28,10 @@ class App extends Component {
   render() {
 
     const handleClick = (id) => {
-      console.log(this)
-      this.setState({yo:19})
+      let tabs=this.state.tabs
+      tabs.push({  title: 'New Order',
+        content: 'bar'})
+      this.setState({tabs})
     }
 
     return (
